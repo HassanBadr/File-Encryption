@@ -11,14 +11,14 @@ public class FileTest {
 /*
 		
 */
-		String resultText="";
-		String resultEncrypt="";
+		StringBuilder resultText=new StringBuilder();
+		StringBuilder resultEncrypt=new StringBuilder();
 		//read file 
 		File readFile = new File("TestFile.txt");
 		Scanner readFromFile = new Scanner(readFile);
 		
 		while (readFromFile.hasNextLine()) {
-			 resultText += readFromFile.nextLine()+"\n"; 
+			 resultText.append(readFromFile.nextLine()+"\n"); 
 			
 		}
 		System.out.println("Encription  process...");
@@ -39,11 +39,12 @@ public class FileTest {
 		readFromFile.close();
 	}
 	
-	public static String dencryptFile(File file)throws IOException {
+	public static StringBuilder dencryptFile(File file)throws IOException {
 		Scanner read = new Scanner(file);
-		String resultText="";
+		StringBuilder resultText=new StringBuilder();
+		
 		while(read.hasNextLine()) {
-			resultText +=read.nextLine();
+			resultText.append(read.nextLine());
 		}
 		read.close();
 		return Encrypt.decryptString(resultText);

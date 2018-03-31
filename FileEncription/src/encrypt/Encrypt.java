@@ -7,30 +7,30 @@ import java.util.Arrays;
 public class Encrypt {
 	
 	
-	public static String encryptString(String testString) {
-		String savedEncrypt="";
+	public static StringBuilder encryptString(StringBuilder testString) {
+		StringBuilder savedEncrypt=new StringBuilder();
 		for(int i =0; i<testString.length(); i++) {
-			savedEncrypt +=(int) testString.charAt(i) +"*";
+			savedEncrypt.append((int) testString.charAt(i) +"*");
 		}
 		
 		return savedEncrypt;
 	}
 	
-	public static String decryptString(String encryptedString) {
+	public static StringBuilder decryptString(StringBuilder encryptedString) {
 		
 		
-		String dencryptedResult = "";
+		StringBuilder dencryptedResult = new StringBuilder();
 		
 		ArrayList<String> listString = new ArrayList<>();
 		
-		listString.addAll(Arrays.asList(encryptedString.split("[*]")));
-		String[] dencryptedString = new String[listString.size()];
+		listString.addAll(Arrays.asList(encryptedString.toString().split("[*]")));
 		
-		dencryptedString = listString.toArray(dencryptedString);
+		//String[] dencryptedString = new String[listString.size()];
+		//dencryptedString = listString.toArray(dencryptedString);
 		
-		for(String item : dencryptedString) {
+		for(String item : listString) {
 			
-			dencryptedResult +=(char) Integer.parseInt(item);
+			dencryptedResult.append((char) Integer.parseInt(item));
 		}
 		
 		return dencryptedResult;
