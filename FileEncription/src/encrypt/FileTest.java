@@ -1,4 +1,4 @@
-package encrypt;
+package eeee;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,16 +11,20 @@ public class FileTest {
 /*
 		
 */
-		StringBuilder resultText=new StringBuilder();
+		
 		StringBuilder resultEncrypt=new StringBuilder();
 		//read file 
 		File readFile = new File("TestFile.txt");
 		Scanner readFromFile = new Scanner(readFile);
+		StringBuilder resultText=new StringBuilder();
+		
 		
 		while (readFromFile.hasNextLine()) {
-			 resultText.append(readFromFile.nextLine()+"\n"); 
+			 resultText.append(readFromFile.nextLine()).append("\n"); 
 			
 		}
+		
+		
 		System.out.println("Encription  process...");
 		resultEncrypt = Encrypt.encryptString(resultText);
 		
@@ -43,9 +47,11 @@ public class FileTest {
 		Scanner read = new Scanner(file);
 		StringBuilder resultText=new StringBuilder();
 		
+		
 		while(read.hasNextLine()) {
 			resultText.append(read.nextLine());
 		}
+		
 		read.close();
 		return Encrypt.decryptString(resultText);
 	}

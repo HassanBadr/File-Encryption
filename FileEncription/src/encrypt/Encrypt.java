@@ -1,4 +1,4 @@
-package encrypt;
+package eeee;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ public class Encrypt {
 	public static StringBuilder encryptString(StringBuilder testString) {
 		StringBuilder savedEncrypt=new StringBuilder();
 		for(int i =0; i<testString.length(); i++) {
-			savedEncrypt.append((int) testString.charAt(i) +"*");
+			savedEncrypt.append((int) testString.charAt(i)).append("*");
 		}
 		
 		return savedEncrypt;
